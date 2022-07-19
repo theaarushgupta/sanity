@@ -3,12 +3,18 @@ LDFLAGS = -ffreestanding -O2 -nostdlib
 
 QEMU = qemu-system-i386
 
-OBJS = bin/start.o
+OBJS = bin/start.o \
+	bin/string.o \
+	bin/print.o \
+	bin/main.o
 
 .PHONY: bin/kernel.bin clean test
 
 bin/kernel.bin:
 	$(MAKE) -C boot
+	$(MAKE) -C lib
+	$(MAKE) -C kernel
+	$(MAKE) -C init
 	$(LD) -T link.ld -o bin/kernel.bin $(LDFLAGS) $(OBJS) -lgcc
 
 bin/sanity.bin: bin/kernel.bin

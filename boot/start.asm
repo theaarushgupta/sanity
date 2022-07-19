@@ -21,6 +21,7 @@ stackTop:
 .type _start, @function
 _start:
     mov $stackTop, %esp
+    call main
     cli
 1:  hlt
     jmp 1b
