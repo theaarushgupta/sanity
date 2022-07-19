@@ -1,0 +1,12 @@
+(in)sanity
+==========
+
+For something between the likes of a toy bootloader or tiny kernel and Arch Linux.
+
+Currently a 32-bit ring 0 kernel but soon to become the next Linux.
+
+Aims to remain small and to be the easiest system to add new architectures to.
+
+Features:
+- Bootloader (multiboot)
+- Hello World kernel
