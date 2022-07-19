@@ -2,5 +2,5 @@
 
 void main(void) {
 	initTerminal();
-	print("WELCOME TO SANITY!");
+	print("welcome to sanity!\nWOW IM ON ANOTHER LINE :o");
 }

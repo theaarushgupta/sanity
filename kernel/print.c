@@ -27,7 +27,16 @@ void initTerminal(void) {
 void print(const char* string) {
     for (size_t i = 0; i < strlen(string); i++) {
         const size_t index = ROW * WIDTH + COLUMN;
-        BUFFER[index] = entry(string[i], COLOR);
+        switch (string[i]) {
+            case '\n':
+                ROW++;
+                COLUMN = -1;
+                break;
+            
+            default:
+                BUFFER[index] = entry(string[i], COLOR);
+                break;
+        }
         if (++COLUMN == WIDTH) {
             COLUMN = 0;
             if (++ROW == HEIGHT) {
