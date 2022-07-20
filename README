@@ -10,3 +10,8 @@ Aims to remain small and to be the easiest system to add new architectures to.
 Features:
 - Bootloader (multiboot)
 - Hello World kernel
+- Terminal support (print, itoa)
+- Global descriptor table
+- Interrupts descriptor table
+
+In progress: paging and heap
