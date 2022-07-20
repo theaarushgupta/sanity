@@ -6,7 +6,7 @@ QEMU = qemu-system-i386
 OBJS = \
 	bin/start.o \
 	bin/string.o \
-	bin/print.o bin/gdtasm.o bin/gdtc.o bin/idtasm.o bin/idtc.o \
+	bin/print.o bin/io.o bin/gdtasm.o bin/gdtc.o bin/idtasm.o bin/idtc.o \
 	bin/main.o
 
 .PHONY: bin/kernel.bin clean test

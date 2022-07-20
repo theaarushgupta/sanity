@@ -4,9 +4,12 @@ CFLAGS = -std=gnu99 -ffreestanding -O2 -Wall -Wextra -I ../include/
 AS = i686-elf-as
 ASFLAGS =
 
-all: ../bin/print.o ../bin/gdtasm.o ../bin/gdtc.o ../bin/idtasm.o ../bin/idtc.o
+all: ../bin/print.o ../bin/io.o ../bin/gdtasm.o ../bin/gdtc.o ../bin/idtasm.o ../bin/idtc.o
 
 ../bin/print.o: print.c ../include/kernel/print.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+../bin/io.o: io.c ../include/kernel/io.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 ../bin/gdtc.o: gdt.c ../include/kernel/gdt.h
