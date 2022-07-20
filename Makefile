@@ -3,9 +3,10 @@ LDFLAGS = -ffreestanding -O2 -nostdlib
 
 QEMU = qemu-system-i386
 
-OBJS = bin/start.o \
+OBJS = \
+	bin/start.o \
 	bin/string.o \
-	bin/print.o \
+	bin/print.o bin/gdtasm.o bin/gdtc.o \
 	bin/main.o
 
 .PHONY: bin/kernel.bin clean test

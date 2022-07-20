@@ -1,6 +1,13 @@
 #include <kernel/print.h>
 
-void main(void) {
+#include <kernel/gdt.h>
+
+void init(void) {
+	initGDT();
 	initTerminal();
+}
+
+void main(void) {
+	init();
 	print("welcome to sanity!\nWOW IM ON ANOTHER LINE :o");
 }
